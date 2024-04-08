@@ -24,7 +24,7 @@ class Profile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.username
 
 class Signup(models.Model):
     email = models.EmailField(max_length=50)
