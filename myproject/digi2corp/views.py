@@ -47,6 +47,7 @@ def profile_view(request):
 def signup_view(request):
     if request.method == 'POST':
         # extract info from the form
+        name= request.POST.get('name')
         email = request.POST.get('email')
         password = request.POST.get('password')
         if len(email)> 0 and len(password)> 0:
@@ -55,6 +56,21 @@ def signup_view(request):
             signup.save()
             messages.success(request, "Your account has been created successfully!")
             return redirect('signup')
+        else:
+            messages.error(request, "Please fill in all the fields!")
+    return render(request, 'signup.html')
+
+def signin_view(request):
+    if request.method == 'POST':
+        # extract info from the form
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        if len(email)> 0 and len(password)> 0:
+            # save the data to the database
+            signin = signin(email=email, password=password)
+            signin.save()
+            messages.success(request, "Your account has been created successfully!")
+            return redirect('signin')
         else:
             messages.error(request, "Please fill in all the fields!")
     return render(request, 'signup.html')
