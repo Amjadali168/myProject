@@ -31,6 +31,7 @@ urlpatterns = [
     path('profile', profile_view, name='profile'),
     path('signup', signup_view, name='signup'),
     path('signin', signin_view, name='signin'),
+    path('joblist',TemplateView.as_view(template_name='job_list.html'), name='joblist')
 
 ]
 
