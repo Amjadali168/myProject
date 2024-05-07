@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
-from digi2corp.views import contact_view , signup_view, profile_view, signin_view
+from digi2corp.views import contact_view , signup_view, profile_view, signin_view, upload_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,7 +31,10 @@ urlpatterns = [
     path('profile', profile_view, name='profile'),
     path('signup', signup_view, name='signup'),
     path('signin', signin_view, name='signin'),
-    path('joblist',TemplateView.as_view(template_name='job_list.html'), name='joblist')
+    path('joblist',TemplateView.as_view(template_name='job_list.html'), name='joblist'),
+    # path('upload_cv',TemplateView.as_view(template_name='upload_cv.html'), name='upload_cv'),
+    path('upload_cv', upload_view, name='upload_cv'),
+
 
 ]
 

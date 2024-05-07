@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Contact, Profile, Signup
+from .models import Contact, Profile, Signup, Upload_cv
 from django.contrib import messages
 
 # Create your views here.
@@ -52,7 +52,7 @@ def signup_view(request):
         password = request.POST.get('password')
         if len(email)> 0 and len(password)> 0:
             # save the data to the database
-            signup = Signup(email=email, password=password)
+            signup = Signup(name=name,email=email, password=password)
             signup.save()
             messages.success(request, "Your account has been created successfully!")
             return redirect('signup')
@@ -74,3 +74,21 @@ def signin_view(request):
         else:
             messages.error(request, "Please fill in all the fields!")
     return render(request, 'signup.html')
+
+def upload_view(request):
+    if request.method == 'POST':
+        # extract info from the form
+        firstname = request.POST.get('firstname')
+        lastname = request.POST.get('lastname')
+        email = request.POST.get('email')
+        phone_number = request.POST.get('phone_number')
+        message = request.POST.get('message')
+        if len(firstname)> 0 and len(email)> 0 and len(phone_number)> 0 and len(message)> 0:
+            # save the data to the database
+            upload_cv = Upload_cv(firstname=firstname, lastname=lastname ,email=email, phone_number=phone_number, message=message)
+            upload_cv.save()
+            messages.success(request, "Your message has been sent successfully!")
+            return redirect('upload_cv')
+        else:
+            messages.error(request, "Please fill in all the fields!")
+    return render(request, 'upload_cv.html')

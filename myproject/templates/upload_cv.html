@@ -1,182 +1,211 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <!-- <link rel="stylesheet" href="/myproject/assets/css/style_cv.css"> -->
-    <title>Input Image With Preview Image</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/stylebuilder/static/form-common.css?v=4f5da60
+" />
+<style>
+    /* .container{
+       border: 1px solid #252424;
+    } */
+    @media print {
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            -webkit-print-color-adjust: exact !important;
+            color-adjust: exact !important;
         }
 
-        :root {
-            --blue: rgb(68, 108, 35);
-            --light-blue: #3d5032;
-            --dark-blue: rgb(80, 163, 3);
-            --grey: #f2f2f2;
+        .form-section {
+            display: inline !important
         }
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: var(--light-blue);
+        .form-pagebreak {
+            display: none !important
         }
 
-
-        .container {
-            max-width: 400px;
-            width: 100%;
-            background: #fff;
-            padding: 30px;
-            border-radius: 30px;
+        .form-section-closed {
+            height: auto !important
         }
 
-        .img-area {
-            position: relative;
-            width: 100%;
-            height: 240px;
-            background: var(--grey);
-            margin-bottom: 30px;
-            border-radius: 15px;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+        .page-section {
+            position: initial !important
         }
-
-        .img-area .icon {
-            font-size: 100px;
-        }
-
-        .img-area h3 {
-            font-size: 20px;
-            font-weight: 500;
-            margin-bottom: 6px;
-        }
-
-        .img-area p {
-            color: #999;
-        }
-
-        .img-area p span {
-            font-weight: 600;
-        }
-
-        .img-area img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            z-index: 100;
-        }
-
-        .img-area::before {
-            content: attr(data-img);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, .5);
-            color: #fff;
-            font-weight: 500;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            pointer-events: none;
-            opacity: 0;
-            transition: all .3s ease;
-            z-index: 200;
-        }
-
-        .img-area.active:hover::before {
-            opacity: 1;
-        }
-
-        .select-image {
-            display: block;
-            width: 100%;
-            padding: 16px 0;
-            border-radius: 15px;
-            background: var(--blue);
-            color: #fff;
-            font-weight: 500;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            transition: all .3s ease;
-        }
-
-        .select-image:hover {
-            background: var(--dark-blue);
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="container">
-        <input type="file" id="file" accept="image/*" hidden>
-        <div class="img-area" data-img="">
-            <i class='bx bxs-cloud-upload icon'></i>
-            <h3>Upload Resume</h3>
-            <p>Resume size must be less than <span>2MB</span></p>
-        </div>
-        <button class="select-image">Select Resume</button>
-        <br>
-        <!-- <input type="file" id="file" accept="image/*" hidden>
-        <div class="img-area" data-img="">
-            <i class='bx bxs-cloud-upload icon'></i>
-            <h3>Upload Resume</h3>
-            <p>Resume size must be less than <span>2MB</span></p>
-        </div>
-        <button class="select-image">Select Image</button> -->
+    }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link type="text/css" rel="stylesheet"
+    href="https://cdn02.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.53612&themeRevisionID=5f7ed99c2c2c7240ba580251" />
+<!-- <link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_styles.css?3.3.53612" /> -->
+<!-- <link type="text/css" rel="stylesheet"href="https://cdn01.jotfor.ms/css/styles/payment/payment_feature.css?3.3.53612" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<form class="jotform-form" onsubmit="return typeof testSubmitFunction !== 'undefined' && testSubmitFunction();"
+     method="post" enctype="multipart/form-data"
+    name="form_241250851531448" id="241250851531448" accept-charset="utf-8" autocomplete="on"><input type="hidden"
+        name="formID" value="241250851531448" /><input type="hidden" id="JWTContainer" value="" /><input type="hidden"
+        id="cardinalOrderNumber" value="" /><input type="hidden" id="jsExecutionTracker" name="jsExecutionTracker"
+        value="build-date-1714992102357" /><input type="hidden" id="submitSource" name="submitSource"
+        value="unknown" /><input type="hidden" id="buildDate" name="buildDate" value="1714992102357" />
+    <div role="main" class="form-all">
+        <ul class="form-section page-section">
+            <li id="cid_16" class="form-input-wide" data-type="control_head">
+                <div class="form-header-group  header-large">
+                    <div class="header-text httal htvam">
+                        <h1 id="header_16" class="form-header" data-component="header">Recruitment Submission</h1>
+                    </div>
+                </div>
+            </li>
+            <li class="form-line jf-required" data-type="control_fullname" id="id_3"><label
+                    class="form-label form-label-top form-label-auto" id="label_3" for="first_3" aria-hidden="false">
+                    Name<span class="form-required">*</span> </label>
+                <div id="cid_3" class="form-input-wide jf-required" data-layout="full">
+                    <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top"
+                            data-input-type="first"><input type="text" id="first_3" name="q3_name[first]"
+                                class="form-textbox validate[required]" data-defaultvalue=""
+                                autoComplete="section-input_3 given-name" size="10" data-component="first"
+                                aria-labelledby="label_3 sublabel_3_first" required="" value="" /><label
+                                class="form-sub-label" for="first_3" id="sublabel_3_first" style="min-height:13px">First
+                                Name</label></span><span class="form-sub-label-container" style="vertical-align:top"
+                            data-input-type="last"><input type="text" id="last_3" name="q3_name[last]"
+                                class="form-textbox validate[required]" data-defaultvalue=""
+                                autoComplete="section-input_3 family-name" size="15" data-component="last"
+                                aria-labelledby="label_3 sublabel_3_last" required="" value="" /><label
+                                class="form-sub-label" for="last_3" id="sublabel_3_last" style="min-height:13px">Last
+                                Name</label></span></div>
+                </div>
+            </li>
+            <li class="form-line form-line-column form-col-1 jf-required" data-type="control_email" id="id_4"><label
+                    class="form-label form-label-top form-label-auto" id="label_4" for="input_4" aria-hidden="false">
+                    E-mail<span class="form-required">*</span> </label>
+                <div id="cid_4" class="form-input-wide jf-required" data-layout="half"> <span
+                        class="form-sub-label-container" style="vertical-align:top"><input type="email" id="input_4"
+                            name="q4_email4" class="form-textbox validate[required, Email]" data-defaultvalue=""
+                            autoComplete="section-input_4 email" style="width:310px" size="310"
+                            placeholder="ex: myname@example.com" data-component="email"
+                            aria-labelledby="label_4 sublabel_input_4" required="" value="" /><label
+                            class="form-sub-label" for="input_4" id="sublabel_input_4"
+                            style="min-height:13px"></label></span> </div>
+            </li>
+            <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_14"><label
+                    class="form-label form-label-top form-label-auto" id="label_14" for="input_14_full"> Phone Number
+                </label>
+                <div id="cid_14" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container"
+                        style="vertical-align:top"><input type="tel" id="input_14_full" name="q14_phoneNumber14[full]"
+                            data-type="mask-number" class="mask-phone-number form-textbox validate[Fill Mask]"
+                            data-defaultvalue="" autoComplete="section-input_14 tel-national" style="width:310px"
+                            data-masked="true" placeholder="(000) 000-0000" data-component="phone"
+                            aria-labelledby="label_14" value="" /></span> </div>
+            </li>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                    <div class="container border border-secondary">
+                        <li class="form-line form-line-column form-col-3" data-type="control_fileupload" id="id_7"><label
+                                class="form-label form-label-top" id="label_7" for="input_7" aria-hidden="false"> Upload your Cover
+                                Letter <span class="form-required">*</span></label>
+                            <div id="cid_7" class="form-input-wide " data-layout="full">
+                                <div class="jfQuestion-fields" data-wrapper-react="true">
+                                    <div class="jfField isFilled">
+                                        <div class="jfUpload-wrapper">
+                                            <div class="jfUpload-container">
+                                                <div class="jfUpload-button-container">
+                                                    <div class="jfUpload-button" aria-hidden="true" tabindex="0" style="display:none"
+                                                        data-version="v2">Upload a File<div class="jfUpload-heading forDesktop">Drag and
+                                                            drop files here</div>
+                                                        <div class="jfUpload-heading forMobile">Choose a file</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="jfUpload-files-container">
+                                                <div class="validate[multipleUpload]"><input type="file" id="input_7"
+                                                        name="q7_uploadYour7[]" multiple="" class="form-upload-multiple"
+                                                        data-imagevalidate="yes"
+                                                        data-file-accept="pdf, doc, docx, xls, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif"
+                                                        data-file-maxsize="10240" data-file-minsize="0" data-file-limit="0"
+                                                        data-component="fileupload" aria-label="Upload a File" /></div>
+                                            </div>
+                                        </div>
+                                        <div data-wrapper-react="true"></div>
+                                    </div><span style="display:none" class="cancelText">Cancel</span><span style="display:none"
+                                        class="ofText">of</span>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                    <div class="container border border-secondary ">
+                        <li class="form-line form-line-column form-col-4 jf-required" data-type="control_fileupload" id="id_2">
+                            <label class="form-label form-label-top" id="label_2" for="input_2" aria-hidden="false"> Upload your
+                                CV<span class="form-required">*</span> </label>
+                            <div id="cid_2" class="form-input-wide jf-required" data-layout="full">
+                                <div class="jfQuestion-fields" data-wrapper-react="true">
+                                    <div class="jfField isFilled">
+                                        <div class="jfUpload-wrapper">
+                                            <div class="jfUpload-container">
+                                                <div class="jfUpload-button-container">
+                                                    <div class="jfUpload-button" aria-hidden="true" tabindex="0" style="display:none"
+                                                        data-version="v2">Upload a File<div class="jfUpload-heading forDesktop">Drag and
+                                                            drop files here</div>
+                                                        <div class="jfUpload-heading forMobile">Choose a file</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="jfUpload-files-container">
+                                                <div class="validate[multipleUpload]"><input type="file" id="input_2" name="q2_uploadYour[]"
+                                                        multiple="" class="form-upload-multiple validate[required]" data-imagevalidate="yes"
+                                                        data-file-accept="pdf, doc, docx, xls, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif"
+                                                        data-file-maxsize="10240" data-file-minsize="0" data-file-limit="0"
+                                                        data-component="fileupload" required="" aria-label="Upload a File" /></div>
+                                            </div>
+                                        </div>
+                                        <div data-wrapper-react="true"></div>
+                                    </div><span style="display:none" class="cancelText">Cancel</span><span style="display:none"
+                                        class="ofText">of</span>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                    </div>
+                </div>
+            </div>
+           
+          
+            <li class="form-line jf-required" data-type="control_radio" id="id_6"><label
+                    class="form-label form-label-top form-label-auto" id="label_6" aria-hidden="false"> Residency
+                    Status<span class="form-required">*</span> </label>
+                <div id="cid_6" class="form-input-wide jf-required" data-layout="full">
+                    <div class="form-single-column" role="group" aria-labelledby="label_6" data-component="radio"><span
+                            class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input
+                                type="radio" aria-describedby="label_6" class="form-radio validate[required]"
+                                id="input_6_0" name="q6_residencyStatus" value="Citizen" required="" /><label
+                                id="label_input_6_0" for="input_6_0">Citizen</label></span><span class="form-radio-item"
+                            style="clear:left"><span class="dragger-item"></span><input type="radio"
+                                aria-describedby="label_6" class="form-radio validate[required]" id="input_6_1"
+                                name="q6_residencyStatus" value="Permanent Resident" required="" /><label
+                                id="label_input_6_1" for="input_6_1">Permanent Resident</label></span><span
+                            class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input
+                                type="radio" aria-describedby="label_6" class="form-radio validate[required]"
+                                id="input_6_2" name="q6_residencyStatus" value="Work Permit" required="" /><label
+                                id="label_input_6_2" for="input_6_2">Work Permit</label></span></div>
+                </div>
+            </li>
+            <li class="form-line" data-type="control_textarea" id="id_8"><label
+                    class="form-label form-label-top form-label-auto" id="label_8" for="input_8" aria-hidden="false">
+                    Message / Additional Info </label>
+                <div id="cid_8" class="form-input-wide" data-layout="full"> <textarea id="input_8" class="form-textarea"
+                        name="q8_message" style="width:648px;height:163px" data-component="textarea"
+                        aria-labelledby="label_8"></textarea> </div>
+            </li>
+            <li class="form-line" data-type="control_button" id="id_1">
+                <div id="cid_1" class="form-input-wide" data-layout="full">
+                    <div data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
+                        <button id="input_1" type="submit"
+                            class="form-submit-button submit-button jf-form-buttons jsTest-submitField"
+                            data-component="button" data-content="">Submit Form</button>
+                    </div>
+                </div>
+            </li>
+            <li style="display:none">Should be Empty: <input type="text" name="website" value="" type="hidden" /></li>
+        </ul>
     </div>
 
-    <script>
-        const selectResume = document.querySelector('.select-resume');
-            const inputFile = document.querySelector('#file');
-            const resArea = document.querySelector('.res-area');
-
-            selectImage.addEventListener('click', function () {
-                inputFile.click();
-            })
-
-            inputFile.addEventListener('change', function () {
-                const image = this.files[0]
-                if (resume.size < 2000000) {
-                    const reader = new FileReader();
-                    reader.onload = () => {
-                        const allImg = resArea.querySelectorAll('res');
-                        allImg.forEach(item => item.remove());
-                        const resUrl = reader.result;
-                        const res = document.createElement('img');
-                        res.src = resUrl;
-                        resArea.appendChild(res);
-                        resArea.classList.add('active');
-                        resArea.dataset.res = resume.name;
-                    }
-                    reader.readAsDataURL(resume);
-                } else {
-                    alert("Resume size more than 2MB");
-                }
-            })
-    </script>
-</body>
-
-</html>
+</form>
+ <script type="text/javascript">JotForm.ownerView = true;</script>
+<script type="text/javascript">JotForm.isNewSACL = true;</script> 
