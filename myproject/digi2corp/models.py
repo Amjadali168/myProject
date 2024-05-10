@@ -1,4 +1,6 @@
 from django.db import models
+from django.views import View
+from django.shortcuts import render
 
 # Create your models here.
 class Contact(models.Model):
@@ -56,3 +58,11 @@ class Upload_cv(models.Model):
 
     def __str__(self):
         return self.firstname
+
+
+class Upload_resume(models.Model):
+    email = models.EmailField(max_length=50, default='')
+    resume_file = models.FileField(upload_to='upload_resume',null=True, blank=True)
+
+    def get(self, request):
+        return render(request, 'upload.html')
