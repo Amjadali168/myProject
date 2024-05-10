@@ -1,6 +1,7 @@
 from django.db import models
 from django.views import View
 from django.shortcuts import render
+import datetime
 
 # Create your models here.
 class Contact(models.Model):
@@ -21,6 +22,7 @@ class Profile(models.Model):
     location = models.CharField(max_length=100)
     email = models.EmailField(max_length=50)
     phone = models.CharField(max_length=15)
+    birthday=models.DateField(null=True, blank=True, default=datetime.date.today)
     address = models.CharField(max_length=100)
     image = models.ImageField(upload_to='profile_pics')
     created_at = models.DateTimeField(auto_now_add=True)

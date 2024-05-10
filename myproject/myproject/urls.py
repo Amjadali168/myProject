@@ -34,7 +34,7 @@ urlpatterns = [
     path('joblist',TemplateView.as_view(template_name='job_list.html'), name='joblist'),
     # path('upload_cv',TemplateView.as_view(template_name='upload_cv.html'), name='upload_cv'),
     path('upload_cv', upload_view, name='upload_cv'),
-    path('upload', upload_resume, name='upload_resume'),
+    # path('upload', upload_resume, name='upload_resume'),
 
 
 ]

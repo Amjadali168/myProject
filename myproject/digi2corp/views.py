@@ -55,6 +55,7 @@ def profile_view(request):
         location = request.POST.get('location')
         email = request.POST.get('email')
         phone = request.POST.get('phone')
+        birthday=request.POST.get('birthday')
         address = request.POST.get('address')
         image = request.FILES.get('image')
 
@@ -67,14 +68,15 @@ def profile_view(request):
                 location=location,
                 email=email,
                 phone=phone,
+                birthday=birthday,
                 address=address,
                 image=image
             )
             profile.save()
             messages.success(request, "Your profile has been created successfully!")
             return redirect('profile')
-        else:
-            messages.error(request, "Please fill in all the fields!")
+        # else:
+            # messages.error(request, "Please fill in all the fields!")
 
     profiles = Profile.objects.all()
     return render(request, 'profile.html', {'profiles': profiles})
